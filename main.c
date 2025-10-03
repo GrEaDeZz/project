@@ -2,6 +2,6 @@
 
 int main(void)
 {
-	printf("My test project\n");
+	printf("My test project!\n");
 	return 0;
 }
