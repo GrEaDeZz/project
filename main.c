@@ -6,6 +6,8 @@
 
 int main(void)
 {
+
+	size_t size = DATA_SIZE;
 	char bigdata[DATA_SIZE],bigdata_recv[DATA_SIZE];
 	char key[KVS_KEY_SIZE] = "key1_bigdata";
 
@@ -21,7 +23,7 @@ int main(void)
 
 	kvs_init(STORAGE_SIZE);
 
-	kvs_get(key,bigdata_recv,DATA_SIZE);
+	kvs_get(key,bigdata_recv,&size);
 
 	printf("Data: %s\n",bigdata_recv);
 
