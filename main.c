@@ -1,8 +1,7 @@
-#include <stdio.h>
-#include "kvs.h"
+#include "gac_common.h"
 
-#define DATA_SIZE    ((64) * (1))
-#define STORAGE_SIZE ((1024) * (1024))
+#define DATA_SIZE    ((512) * (1024) * (1024))
+#define STORAGE_SIZE ((1024) * (1024) * (1024))
 
 int main(void)
 {
@@ -25,7 +24,8 @@ int main(void)
 
 	kvs_get(key,bigdata_recv,&size);
 
-	printf("Data: %s\n",bigdata_recv);
+	if(kvs_exists(key))
+		printf("key: \'%s\' is exists\n",key);
 
 	kvs_deinit();
 
